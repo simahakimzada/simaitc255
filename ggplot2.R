@@ -5,7 +5,7 @@ head(simadata)
 colnames (simadata)
 #1Scatterplot
 
-ggplot(data = simadata, mapping = aes(x =Height-cm
+ggplot(data = simadata, mapping = aes(x = Height-cm
 , y = Age)) +
   geom_point()
 ggplot(data = simadata, mapping = aes(x = Gender, y = Age, color = Sport)) +
@@ -13,33 +13,34 @@ ggplot(data = simadata, mapping = aes(x = Gender, y = Age, color = Sport)) +
 
 #2Smooth line
 ggplot(data = simadata, mapping = aes(x = Gender, y = Age)) +
-  geom_point(color = "blue") +      
-  geom_smooth(color = "red") 
+  geom_point(color = "darkblue") +      
+  geom_smooth(color = " darkred") 
 theme_classic() +                      
   ggtitle("Age vs Gender") +             
   xlab("Gender") +                        
   ylab("Age") 
-ggplot(data = simadata, mapping = aes(x = Gender, y = SkillLevel)) +
+ggplot(data = simadata, mapping = aes(x = Gender, y = Age
+)) +
   geom_point() +
   geom_smooth()
 
 #3Bar chart
-ggplot(data = simadata, aes(x = gender)) +
+ggplot(data = simadata, aes(x = Gender)) +
   geom_bar()
-ggplot(data = simadata, aes(x = Satisfiction, fill = Age)) +
+ggplot(data = simadata, aes(x = Satisfaction, fill = Age)) +
   geom_bar(position = "dodge")
 
 #4Histogram
-ggplot(data = simadata, aes(x = High.cm)) +
+ggplot(data = simadata, aes(x = Height-cm)) +
   geom_histogram(bins = 10)
 
 #5Density plot
 
-ggplot(data = simadata, aes(x = Level.of.Satisfaction)) +
+ggplot(data = simadata, aes(x = Satisfaction)) +
   geom_density()
 
-#6Boxplot
-ggplot(data = simadata5, aes(x = Sport, y = Level.of.Satisfaction)) +
+#6Boxplotr
+ggplot(data = simadata, aes(x = Sport, y =Satisfaction)) +
   geom_boxplot()
 
 #7Facets
@@ -52,10 +53,12 @@ ggplot(data = simadata, aes(x = Gender, y = Age)) +
   facet_grid(Gender ~ Age)
 
 p <- ggplot(simadata, aes(x = Gender, y = Age)) +
-  geom_point(color = "blue") +      
+  geom_point(color = "red") +      
   geom_smooth(color = "black") +      
-  facet_grid(Sport ~ SkillLevel) + 
-  ggtitle("Age vs Gender by Sport and SkillLevel") +  
+  facet_grid(Sport ~ Sport
+) + 
+  ggtitle("Age vs Gender by Satisfaction and Gender
+ ") +  
   xlab("Sport") + 
   ylab("Age")
 
