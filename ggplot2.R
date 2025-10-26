@@ -24,9 +24,9 @@ ggplot(data = simadata, mapping = aes(x = Gender, y = SkillLevel)) +
   geom_smooth()
 
 #3Bar chart
-ggplot(data = simadata, aes(x = SkillLevel)) +
+ggplot(data = simadata, aes(x = gender)) +
   geom_bar()
-ggplot(data = simadata, aes(x = SkillLevel, fill = Sport)) +
+ggplot(data = simadata, aes(x = Satisfiction, fill = Age)) +
   geom_bar(position = "dodge")
 
 #4Histogram
